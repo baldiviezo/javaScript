@@ -55,7 +55,7 @@ const obtenerInformacion = (texto) => {
         }, Math.random() * 1000)
     })
 }
-
+console.log(obtenerInformacion("Hola"));
 const mostrarInformacion = async () => {
     try {
         const dato1 = await obtenerInformacion("Hola");
@@ -73,11 +73,71 @@ const mostrarInformacion = async () => {
 mostrarInformacion();
 */
 //----Fetch con async & await
-
+/*
 const obtenerNombre = async () => {
     const response = await fetch("./informacion.txt");
     const informacion = await response.json();
-    console.log(informacion);
+    console.log(informacion.nombre);
 }
 
 obtenerNombre();
+*/
+
+
+/*
+async function funcion1(texto) {
+
+      setTimeout(() => {
+        console.log(texto);
+      }, Math.random() * 1000);
+
+  }
+
+async function funcion2 () {
+    await funcion1 ("Hola")
+    await funcion1 ("Adios")
+    await funcion1 ("Chau")
+}
+//La funcion1 imprime los tres mensajes, imprime los mensajes de uan forma desordenada. 
+funcion2();
+*/
+/*
+async function funcion1(texto) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log(texto);
+   
+          }, Math.random() * 1000);
+    })   
+}
+
+async function funcion2 () {
+  await funcion1 ("Hola")
+  await funcion1 ("Adios")
+  await funcion1 ("Chau")
+}
+
+funcion2();
+
+//sin solve solo imrime hola 
+*/
+async function funcion1(texto) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(texto);
+          }, Math.random() * 1000);
+    })   
+}
+
+async function funcion2 () {
+funcion1 ("Hola").then(() => {
+    console.log("Hola")
+})
+  await funcion1 ("Adios")
+  await funcion1 ("Chau")
+  console.log(await funcion1 ("Chau"))
+  console.log(funcion1 ("Chau"))
+}
+
+funcion2();
+//Imprime los tres en orden correcto
