@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IIFE</title>
+</head>
+
+<body>
+    <script>
+        /*Se ejecuta sin necesidad de llamar a la función*/
+        /*(function() {
+            console.log("Hola, soy una IIFE");
+        })();*/
+
+        window.Usuarios = (function () {
+
+            // Variable privada tipo Map 
+            // Permite almacenar pares clave-valor, en este caso, el nombre del usuario como clave y su edad como valor
+            var lista = new Map();
+
+            return {
+
+                agregar: function (nombre, edad) {
+                    lista.set(nombre, edad);
+                },
+
+                obtener: function (nombre) {
+                    return lista.get(nombre);
+                },
+
+                mostrar: function () {
+                    console.log(lista);
+                }
+
+            };
+
+        })();
+        Usuarios.mostrar();
+        Usuarios.agregar("Juan", 30);
+        Usuarios.agregar("María", 25);
+        Usuarios.mostrar();
+        console.log(Usuarios.obtener("Juan"));
+    </script>
+</body>
+
+</html>
