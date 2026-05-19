@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<form id="form">
+		<input type="text" name="nombre">
+		<input type="text" name="apellido">
+		<input type="text" name="edad">
+		<input type="submit">
+	</form>
+	<script>
+		document.getElementById('form').addEventListener('submit', observar);
+		function observar(){
+			event.preventDefault();
+			form = document.getElementById('form');
+			let formData = new FormData(form);
+			console.log(transactionFormData.get(nombre));
+		}
+	</script>
+</body>
+</html>

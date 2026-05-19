@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Eccmmerce website</title>
+	<link rel="stylesheet" href="estilo.css">
+	<script type="text/javascript"></script>
+</head>
+<body>
+	<!--
+	La etiqueta define una parte del texto en una voz o estado de ánimo alternativo. El contenido interior se muestra normalmente en cursiva.<i>
+	-->
+	<div class="header">
+		<p class="logo">LOGO</p>
+		<div class="cart"><img src="carrito.svg"><p id="count">0</p></div>
+	</div>
+	<div class="container">
+		<div id="root"></div>
+		<div class="sidebar">
+			<div class="head"><p>My cart</p></div>
+			<div id="cartItem">Your cart is empty</div>
+			<div class="foot">
+				<h3>Total</h3>
+				<h2 id="total">$ 0.00</h2>
+			</div>
+		</div>
+	</div>
+	<script src="addToCard.js"></script>
+</body>
+</html>

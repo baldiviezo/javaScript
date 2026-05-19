@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+<h2>JavaScript Callbacks</h2>
+<p id="demo"></p>
+<script>
+/*
+function myDisplayer(some) {
+  document.getElementById("demo").innerHTML = some;
+}
+function getFile(myCallback) {
+  let req = new XMLHttpRequest();
+  req.open('GET', "paraCopiarSuContenido.html");
+  req.send();
+  req.onload = function() {
+    if (req.status == 200) {
+      myCallback(this.responseText);
+    } else {
+      myCallback("Error: " + req.status);
+    }
+  }
+}
+getFile(myDisplayer); 
+*/
+const promesa = new Promise((resolve,reject)=>{
+	let req = new XMLHttpRequest();
+  	req.open('GET', "paraCopiarSuContenido.html");
+ 	req.send();
+  	req.onload = function() {
+    if (req.status == 210) {
+      resolve(this.responseText);
+    } else {
+      reject("Error: " + req.status);
+    }
+  }
+})
+promesa.then(some=>{document.getElementById("demo").innerHTML = some},error=>document.write(error))
+</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>radio button</title>
+</head>
+<body>
+	<form>
+		<label><input type="radio" name="lenguajes" value="javascript"> JavaScrip</label>
+		<label><input type="radio" name="lenguajes" value="python"> Python</label>
+		<label><input type="radio" name="lenguajes" value="c++"> C++</label>
+		<input type="button" value="deshabilitar" onclick="deshabilitar()">
+		<input type="button" value="habilitar" onclick="habilitar()">
+		<input type="button" value="mostrar" onclick="mostrar()">
+		<input type="button" value="limpiar" onclick="limpiar()">		
+	</form>
+</body>
+<script>
+	//desabilita los radio button. no se puede seleccionar ninguno
+	function deshabilitar(){
+		let radioButtons = document.querySelectorAll('input[type="radio"]');
+		radioButtons.forEach(radioButton => radioButton.disabled = true);
+	}
+	function habilitar(){
+		let radioButtons = document.querySelectorAll('input[type="radio"]');
+		radioButtons.forEach(radioButton => radioButton.disabled = false);
+	}
+	function mostrar(){
+		let radioButtons = document.querySelectorAll('input[type="radio"]');
+		if(radioButtons[0].checked){
+			alert("javaScript");
+		}
+		if(radioButtons[1].checked){
+			alert("Python");
+		}
+		if(radioButtons[2].checked){
+			alert("C++");
+		}
+	}
+	function limpiar (){
+		let radioButtons = document.querySelectorAll('input[type="radio"]');
+		if(radioButtons[0].checked){
+			radioButtons[0].checked = false;
+		}
+		if(radioButtons[1].checked){
+			radioButtons[1].checked = false;
+		}
+		if(radioButtons[2].checked){
+			radioButtons[2].checked = false;
+		}
+	}
+</script>
+</html>

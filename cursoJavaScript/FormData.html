@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+<form id="form">
+	<input type="text" name="username" placeholder="Nombre de usuario">
+	<input type="file" name="image" id="file">
+	<input type="submit">
+</form>
+<div>
+	<p id="username"></p>
+	<img id="image">
+</div>
+<script>
+		const form = document.getElementById('form')	
+		const userNameObjet = document.getElementById('username')
+		const userImageObjet = document.getElementById('image')
+		const userFileObjet = document.getElementById('file')
+		function renderUserimage (formData){
+			const file = formData.get('image')
+			const image = URL.createObjectURL(file)
+			userImageObjet.setAttribute('src',image)
+		}
+		function renderUsername (formData){
+			const userName = formData.get('username')
+			userNameObjet.textContent = userName
+		}
+		//Cada vez que cambie la imagen se recarga
+		userFileObjet.addEventListener('change',()=>{
+			const formData = new FormData(form)
+			renderUserimage(formData);
+		})
+		form.addEventListener('submit', ()=>{
+			event.preventDefault()
+			//current Target es envio actual
+			//formData es un objeto
+			const formData = new FormData(event.currentTarget)
+			//debugger pausa la ejecucion del programa
+			/*debugger*/
+/*En consola escribimos lo siguiente:
+	- formData.get('username') nos retorna el value de username
+	- formData.get('imagen') nos retorna el value de imagen
+
+  para introducir valores utilizamos set:
+  	- formData.set('text','el valor que tendria text')
+  para llamarlo escribimos:
+  	- formData.get('text') nos retorna el value de text
+*/
+			renderUsername(formData);
+		})
+</script>
+</body>
+</html>

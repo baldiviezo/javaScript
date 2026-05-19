@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+<script>
+	//Dentro de una fucnion cuando se crea una variable, ponerle let para que esta variable no exista fuera de la funcion
+	//Funcion normal
+	function funcionNormal (){
+		document.write("hola" + `<br>`);
+	}
+	funcionNormal();
+	//funcion con parametro
+	function funcionNormalConParametro (parametro){
+		document.write("hola " + parametro + `<br>`);
+	}
+	funcionNormalConParametro("Alvaro");
+	/* NO FUNCIONA
+	//igualando una funcion
+	let variable = function funcionPrueba (){
+		document.write("hola" + `<br>`);
+	}
+	// la funcion no se puede llamar asi
+	document.write(variable);
+	console.log(variable);
+	// las funciones no se pueden llamar asi
+	let funcion = ()=>document.write("hola")
+	document.write(funcion())	
+	*/
+	//Funcion con const
+	const variableFuncion = function (parametro){
+		document.write("hola " + parametro + `<br>`);
+	}
+	variableFuncion("Alvaro");
+	//funcion flecha
+	let variableFlecha = parametro => document.write("hola " + parametro + `<br>`);
+	variableFlecha("Alvaro")
+	/* 
+	//probando NO FUNCIONA
+	document.write(() => document.write("hola"));
+	*/
+</script>
+</body>
+</html>

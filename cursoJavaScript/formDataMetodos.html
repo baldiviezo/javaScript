@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<form id="form">
+		<input type="text" name="usuario">
+		<input type="password" name="pass">
+		<input type="email" name="email">
+		<input type="file" name="archivo">
+		<input type="submit" name="enviar">
+	</form>
+	<p id="p"></p>
+	<script>
+		form.addEventListener('submit',cargarFormulario)
+		function cargarFormulario (){
+		event.preventDefault();
+		const form = document.getElementById("form")
+		const formData = new FormData(form)
+		console.log(formData.get('usuario'))
+		console.log(formData.get('pass'))
+//se Muestra el mismo resultado al usar set o append
+//añade un nuevo clave/valor
+		formData.set('apellido','Mamani')
+		console.log(formData.get('apellido'))
+
+		const	p = document.getElementById('p')
+		for ( const [key, value] of formData){
+			p.textContent += `${key}: ${value}` 
+		}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<form name="form">
+		<input type="submit" name="borrar">
+	</form>
+	<form name="form">
+		<input type="submit" name="modificar">
+	</form>
+	<script>
+		document.getElementsByTagName('form')[1].addEventListener('submit', alerta);
+		function alerta(){
+			event.preventDefault();
+		}
+	</script>
+</body>
+</html>

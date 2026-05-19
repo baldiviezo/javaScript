@@ -1,0 +1,55 @@
+html, body {
+	padding: 0;
+	margin: 0;
+}
+body{
+	background: #272343;
+/*flex=doblar*/
+	display: flex;
+/*centrado*/
+	justify-content: center;
+/*centrado vertical con ayuda del heigh*/
+	align-items: center;
+	height: 100vh;
+}
+/*Identificador de ID*/
+#quiz{
+	background: #e3f6f5;
+	width: 30rem;
+	padding: 4rem;
+/*Alineacion de texto*/
+	text-align: center;
+}
+h1{
+	/*color de texto*/
+	color: #57636e;
+	/*tamaño de texto*/
+	font-size: 3rem;
+	/*padding ariba y abajo*/
+	padding: 2px 0;
+}
+/*titulo h2 identificado por id*/
+#question{
+	font-size: 1.7rem;
+	color: #5a6772;
+}
+/*Identificamos por clase los botones*/
+.button{
+	background-color: #34a3a3;
+	color: white;
+	width: 250px;
+	font-size: 20px;
+	border-radius: .3rem;
+	padding: 10px 20px;
+	/*margin ariba, derecha, abajo, izquierda*/
+	margin: 10px;
+}
+/*Cuando el cursor este encima del boton*/
+.button:hover{
+	/*cambia la forma del cursor*/
+	cursor: pointer;
+	background-color: #57636e;
+}
+#progress{
+	font-size: 20px;
+}

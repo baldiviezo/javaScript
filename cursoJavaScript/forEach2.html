@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+				<form id="formModificar" class="form">
+					<div class="form__container">
+						<input type="text" name="id" >
+						<div class="form__group">
+							<input type="text" name="nombres" placeholder=" " class="form__input">
+							<label for="nombres" class="form__label">Nombres:</label>
+						</div>
+						<div class="form__group">
+							<input type="text" name="apellidos" placeholder=" " class="form__input">
+							<label for="apellidos" class="form__label">Apellidos:</label>
+						</div>
+						<div class="form__group">
+							<input type="password" name="contraseña" placeholder=" " class="form__input">
+							<label for="contraseña" class="form__label">Contraseña:</label>
+						</div>
+						<div class="form__group">
+							<input type="password" name="contraseña2" placeholder=" " class="form__input">
+							<label for="contraseña2" class="form__label">Contraseña:</label>
+						</div>
+						<div class="form__group">
+							<input type="email" name="email" placeholder=" " class="form__input">
+							<label for="email" class="form__label">Correo electrónico:</label>
+						</div>
+						<div class="form__group">
+							<input type="number" name="ci" placeholder=" " class="form__input">
+							<label for="ci" class="form__label">Cédula de identidad:</label>
+						</div>
+						<div class="form__group">
+							<input type="text" name="direccion" placeholder=" " class="form__input">
+							<label for="direccion" class="form__label">Dirección:</label>
+						</div>
+						<div class="form__group">
+							<input type="number" name="celular" placeholder=" " class="form__input">
+							<label for="celular" class="form__label">Celular:</label>
+						</div>
+						<div class="form__radio">
+							<input type="radio" name="rol" id="ing" value="ingeniero">
+							<label for="ing">Ingeniero</label>
+							<input type="radio" name="rol" id="admi" value="administrador">
+							<label for="admi">Administrador</label>
+						</div>
+						<input type="submit" value="Guardar" class="form__submit">
+					</div>	
+				</form>
+</body>
+<script>
+	const inputs = document.querySelectorAll('.form .form__group input');
+	inputs.forEach(input => input.setAttribute("required",""));
+</script>
+</html>

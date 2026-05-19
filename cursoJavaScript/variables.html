@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	//Casos especiales de DATOS: undefined, null, Nan
+	//undefined= Esta declarada pero no inicializada
+	//La variable se puede declarar, inicializar y modificar 
+	//tenemos tres formas de declarar una variable var, let, const
+	//Se utiliza mas let por que let nos limita el alcanze de la variable, si declaramos una variable let dentro de una funcion solo dentro de la funcion se podra usar la variable
+	//las variables const no pueden cambiar su valor, solo se define una vez.
+	// numero solo esta declarada regionalmente
+	let numero;
+	//edad esta declarada he inicialisada 
+	let edad = 27;
+	//const no se puede declarar y luego inicializer, ese tiene que declara e inicializr en la misma linea.
+	const pi = 3.1416;
+
+	//null=tiene un velor, pero un valor vacio.
+	//numero ya esta declarada y definida con null
+	let numero2 = null;
+	//NaN= no es un numero
+	//cuando hacemos operaciones con strings
+	let numero3 = 5;
+	let nombre = 'pedro';
+	//alert(numero*nombre);
+	//EN UNA FUNCION LA VARIABLES DECLARADAS A UN QUE SEA VAR SOLO ES PARA LA FUNCION
+	function variable(){
+		var apellido = 'baldiviezo';
+	}
+	{
+		apellido2 = 'Escobar';
+
+	}
+	//apellido2 sale del bloque, pero con let no sucede eso
+	//Con led nos sale que no esta definido
+	//Si no lo declaramos por defecto es var.
+	alert(apellido2);
+	
+</script>
+</html>

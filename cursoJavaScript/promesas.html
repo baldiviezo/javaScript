@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+<!--las promesas son obejetos y tienen dos callbacks principales
+-resolve(resolver).- uno representa la terminacion de una operacion asincrona
+-reject(rechazar).- representa el fracaso de una operacion asincrona
+-->
+<script>
+	let nombre = "pedro";
+//Es un objeto promesa, tiene dos callbacks resolve y reject
+	const promesa = new Promise((resolve,reject)=>{
+		if (nombre!="pedro") {
+			reject ("lo siento el nombre no es pedro")
+		}
+		else {
+			resolve (nombre)
+		}
+	})
+//Las promesas tiene encapsulado sus valores
+	console.log(promesa)
+//se puede acceder a sus valores bajo el metodo then
+//then recibe un callback
+//then funciona cuando 'resolve' se ejecuto, si se ejecuta 'reject' sale error aunque no llamemos a la promesa
+//con catch dejamos de mostrar el error y mostramos nuestro mensaje error 
+	promesa.then(resultado=>console.log(resultado)).catch(e=>console.log(e))
+//muesta por pantalla 
+	promesa.then(resultado=>document.write(resultado)).catch(e=>console.log(e))
+
+	let promesaDOS
+
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+</head>
+<body>
+    <h1>Contador</h1>
+    <p id="count"></p>
+    <button id="boton">Sumar</button>
+    <script>
+        const parrafo= document.getElementById('count');
+        const boton = document.getElementById('boton');
+        boton.addEventListener('click', contador);
+        let value = 1
+        contador();
+        function contador(){
+            parrafo.innerHTML = value;
+            value++;
+        }
+    </script>
+</body>
+</html>

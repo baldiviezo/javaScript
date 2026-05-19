@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<h1>llamar PLC</h1>
+	<img id="imagen">
+	<input type="submit" id="boton" value="PLC">
+	<script>
+		document.getElementById("boton").addEventListener("click",llamarImagen)
+		function llamarImagen(){
+			document.getElementById("boton").type = "hidden"
+			const imagen = document.getElementById("imagen");
+//objeto blob que tiene varios atributos
+//URL.createObjectURL crea un url valida temporal, la url cambia cada vez que se llama.
+		fetch("plc.jpg").then(res=>res.blob()).then(img=>imagen.src = URL.createObjectURL(img))
+		}
+		
+	</script>
+</body>
+</html>

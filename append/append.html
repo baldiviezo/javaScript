@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+<div id="contenedor">
+	<p id="uno">Parrafo1</p>
+	<p id="dos">parrafo2</p>
+	<p id="tres">parrado3</p>
+</div>
+<script>
+	const elementoH1 = document.createElement('h1');
+	elementoH1.setAttribute("class", "titulo");
+	elementoH1.innerHTML = "hola, <strong> mundo </strong>";
+	console.log(elementoH1);
+	const contenedor = document.getElementById('contenedor');
+
+	//-- prepend
+	//Agraga el elemento al incio del documento
+	//contenedor.prepend(elementoH1);
+
+	//--append - el emetodo lanza como ultimo hijo del contenedor
+	//ponemos nuestro elemento en ultimo lugar
+	//contenedor.append(elementoH1);
+
+	//--appendChild
+	//agrega al elemento como ultimo hijo del contenedor
+	//contenedor.appendChild(elementoH1);
+
+	//--insertBefore
+	const p1 = document.getElementById('uno');
+	const p2 = document.getElementById('dos');
+	const p3 = document.getElementById('tres');
+	contenedor.insertBefore(elementoH1, p3);
+</script>
+</body>
+</html>

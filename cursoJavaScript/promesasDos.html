@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+<script>
+/*	let x = false
+	if (!x) document.write(!x)*/ 
+/*	let nombre = "pedro0";
+	const promesa = new Promise((exito,error)=>{
+		if (nombre!="pedro") error ("lo siento el nombre no es pedro")
+		else exito (nombre)
+	})
+	console.log(promesa)
+	promesa.then(parametro=>document.write(parametro)).catch(error=>document.write(error))
+	*/
+	let bool = false;
+	let x = 5;
+	let y = 10;
+	const promesaDos = new Promise((resolve,reject)=>{
+		if (bool) resolve ();
+		else reject ("ERROR")
+	})
+	promesaDos.then(()=>document.write(x+y)).catch(parametro=>document.write(parametro))
+
+</script>
+</body>
+</html>

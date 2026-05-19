@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Ordenar Obejto</title>
+</head>
+<body>
+	<label>Escribir: </label>
+	<input type="text" name="" id="input">
+	<script>
+		const arrayUno = [1, 5, 3, 6, 2, 8];
+		const arrayDos = [3, 100, 1, 200, 2, 6, 3, 220, 10];
+		const arrayTres = [
+				{codigo: '6EP4135-0GB00-0AY0', nombre : 'Juan', apellido: 'Walas', edad: 3},
+				{codigo: '10P6AT8002-4AC03', nombre : 'ariel', apellido: 'cavani', edad: 100},
+				{codigo: '1P6ES5735-2BD20', nombre : 'Carlos', apellido: 'zabeleta', edad: 1},
+				{codigo: '11P6AT8003-4AC03', nombre : 'walter', apellido: 'Alvarado', edad: 200},
+				{codigo: '6XV1875-5CN10', nombre : 'Sandro', apellido: 'zorro', edad: 2},
+				{codigo: '6V1875-5CN10', nombre : 'Salomon', apellido: 'zzz', edad: 2}
+			];
+		//console.log(arrayUno.sort())
+		//console.log(arrayDos.sort())
+		//console.log(arrayTres)
+
+		/*sort devuelve los valores -1, 0, 1 al comparar dos valores */
+		/*No modifica el array verdadero*/
+		/*console.log(arrayDos.sort((a,b)=>{
+			if(a<b){return -1;}
+			if(a>b){return 1;}
+			return 0;
+		}))*/
+		/*console.log(arrayDos.sort((a,b)=>{return a- b}))*/
+		/*console.log(arrayTres.sort((a,b)=>{
+			aa = a.apellido.toLowerCase();
+			bb = b.apellido.toLowerCase();
+			if(aa<bb){return -1;}
+			if(aa>bb){return 1;}
+			return 0;
+		}))*/
+		//console.log(ordenar(arrayTres, 'nombre'))
+		//console.log(ordenar(arrayTres, 'apellido'))
+		//console.log(ordenar(arrayTres, 'edad', 'DESC'))
+		
+		function ordenar(array, clave, condicion){
+			if(typeof(array[0][clave]) == 'string'){
+				if(condicion == 'DESC'){
+					return array.sort((a,b)=>{
+						aa = a[clave].toLowerCase();
+						bb = b[clave].toLowerCase();
+						if(aa > bb){return -1;}
+						if(aa < bb){return 1;}
+						return 0;
+					})
+				}else{
+					return array.sort((a,b)=>{
+						aa = a[clave].toLowerCase();
+						bb = b[clave].toLowerCase();
+						if(aa < bb){return -1;}
+						if(aa > bb){return 1;}
+						return 0;
+					})
+				}
+			}else{
+				if (condicion == 'DESC'){
+					return array.sort((a,b)=>{
+						return b[clave] - a[clave];
+					})
+				}else{
+					return array.sort((a,b)=>{
+						return a[clave] - b[clave];
+					})
+				}
+			}
+		}
+		let input = document.getElementById('input');
+		input.addEventListener('keyup', buscar);
+		
+		/*function buscar(){
+			//let resultado = arrayTres.find(persona=>persona.edad == input.value);
+			let resultado = arrayTres.filter(persona=>persona.edad == input.value);
+			//find solo busca un objeto
+			//filter da como resultado un array de objetos si hay un objeto o muchos
+			console.log(resultado);
+		}*/
+		let por = ['codigo', 'nombre', 'apellido'];
+		let cadena;
+		function buscar(){
+			let newArray = [];
+			arrayTres.forEach(objeto=>{
+				for (clave in objeto){
+					/*cadena = false;
+					por.forEach(valor=>{
+						if(valor == clave){
+							cadena = true;
+						}
+					})*/
+					if(clave == por[0] || clave == por[1] || clave == por[2]){
+						if(objeto[clave].toLowerCase().indexOf(input.value.toLowerCase())>=0){
+							newArray.push(objeto);
+							break;
+						}
+					}
+				}
+			})
+			console.log(newArray)
+		}
+		
+
+	</script>
+</body>
+</html>

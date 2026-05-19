@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+<script>
+//array
+	let arreglo = ["caracter",5,true]
+	//en consola cada valor aparece con su indice y tabien aparece length
+	console.log(arreglo);
+	console.log(arreglo[0]);
+//objeto
+	let objeto = {
+	//igual funciona con comillas simples
+		nombre : "html",
+		tiempo : 5,
+		disponible : true
+	}
+	console.log(objeto);
+	console.log(objeto['nombre']);
+	console.log(objeto.tiempo);
+//arreglo de objetos
+	var arrayDeObjetos = [
+		{
+			nombre: "html",
+			estado: true
+		},
+		{
+			nombre: "CSS",
+			estado: true
+		},
+		{
+			nombre: "JS",
+			estado: false
+		}
+	]
+	console.log(arrayDeObjetos);
+//recorrer el arreglo
+	for(let indice of arrayDeObjetos){
+		console.log(indice);
+
+	}
+//recorrer el arreglo y obtener un valor de una propiedad del objeto
+	for(let indice of arrayDeObjetos){
+		console.log(indice.nombre);
+
+	}
+
+
+
+</script>
+</body>
+</html>

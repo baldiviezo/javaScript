@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+<script>
+	/*
+	function primeraFuncion(callback){
+		callback("pedro");
+	}
+	function segundaFuncion(nombre){
+		document.write(nombre);
+	}
+	primeraFuncion(segundaFuncion);
+	*/
+	function primeraFuncion(callback){
+		callback();
+	}
+	primeraFuncion(()=>{for(let i=0;i<=5;i++){document.write(i+`<br>`)}})
+
+</script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<input type="submit" value="Mostrar tabla" id="mostrar">
+</body>
+<table>
+	<thead>
+		<tr>
+			<th>autor</th>
+			<th>titulo</th>
+			<th>cantidad</th>
+		</tr>
+	</thead>
+	<tbody id="body"></tbody>
+</table>
+<script>
+/*	document.getElementById('mostrar').addEventListener('click',traerDatos)
+	function traerDatos(){
+		fetch('archivo.json').then(res=>res.text()).then(dato=>{
+			//en un string
+			console.log(dato)
+			console.log(typeof dato)
+			//volviendolo a un objeto json
+			dato = JSON.parse(dato)
+			console.log(dato)
+			console.log(typeof dato) 
+			//for hace un recorido por cada uno de los items
+			//fila un objeto de todo el array de objetos
+			let body = document.getElementById('body')
+			body.innerHTML = '';
+			for (let fila of dato){
+			console.log(fila);
+			body.innerHTML += `
+				<tr>
+					<th>${fila.autor}</th>
+					<th>${fila.libro}</th>
+					<th>${fila.cantidad}</th>
+				</tr>
+			`;
+			console.log(typeof fila.autor)
+			console.log(typeof fila.libro)
+			console.log(typeof fila.cantidad)
+		}
+		})
+	}
+*/
+document.getElementById('mostrar').addEventListener('click',traerDatos)
+	function traerDatos(){
+		fetch('archivo.json').then(res=>res.json()).then(dato=>{
+			let body = document.getElementById('body')
+			body.innerHTML = '';
+			for (let fila of dato){
+			body.innerHTML += `
+				<tr>
+					<th>${fila.autor}</th>
+					<th>${fila.libro}</th>
+					<th>${fila.cantidad}</th>
+				</tr>
+			`;
+		}
+		})
+	}
+</script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+<script>
+/*
+	fetch("https://reqres.in/api/users",{
+		method:"POST",
+		body: `{"Nombre":"Alvaro" , "Apellido":"Baldiviezo"}`,
+		//hay diferentes tipos de headers, dependiendo al tipo de informacion que enviemos
+		headers: {"content-type":"application/json"}
+		//convirtiendo en formato JSON (un objeto)
+	}).then(res=>res.json()).then(res=>document.write(res))
+//añadir un 3er then devuleve un resultado diferente si ubiera sido el 2do then
+*/
+//Quitando el header ocurre un error
+fetch("https://reqres.in/api/users",{
+		method:"POST",
+//Body datos del formulario
+		body: `[{"Nombre":"Alvaro" , "Apellido":"Baldiviezo"},{"Nombre":"Le voy a cambiar" , "Apellido":"nombre"}]`,
+		headers: {"content-type":"application/json"}
+	}).then(res=>res.json()).then(res=>console.log(res[1].Nombre+" el " +res[1].Apellido))
+</script>
+</body>
+</html>

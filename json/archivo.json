@@ -1,0 +1,17 @@
+[
+{
+	"autor": "alvaro",
+	"libro"	: "javaScrip",
+	"cantidad": 5 
+},
+{
+	"autor": "marco",
+	"libro"	: "wow",
+	"cantidad": 7
+},
+{
+	"autor": "carlos",
+	"libro"	: "batallas",
+	"cantidad": 3 
+}
+]

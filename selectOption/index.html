@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SECTION OPTION</title>
+</head>
+<body>
+	<select class="select">
+		<option value="hola1">hola1</option>
+		<option value="hola2">hola2</option>
+		<option value="hola3">hola3</option>
+		<option value="hola4">hola4</option>
+		<option value="hola5">hola5</option>
+		<option value="hola6">hola6</option>
+	</select>
+	<button id="get">GET valor</button>
+	<button id="set">SET valor</button>
+</body>
+<script>
+	const select = document.querySelector('.select');
+	console.log(select);
+	const botonget = document.getElementById('get')
+	const botonset = document.getElementById('set')
+	//console.log(boton)
+	botonget.addEventListener('click',()=>{
+		console.log(select.value)
+	})
+	botonset.addEventListener('click',()=>{
+		select.value = 'hola3';
+	})
+</script>
+</html>
