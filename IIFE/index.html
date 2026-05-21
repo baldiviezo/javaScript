@@ -18,7 +18,12 @@
 
             // Variable privada tipo Map 
             // Permite almacenar pares clave-valor, en este caso, el nombre del usuario como clave y su edad como valor
+            // Solo existe dentro de la IIFE.
             var lista = new Map();
+
+            function privada() {
+                console.log("soy privada");
+            }
 
             return {
 
