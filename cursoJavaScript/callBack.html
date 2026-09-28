@@ -7,6 +7,7 @@
 </head>
 <body>
 <script>
+	// callback es una función que se pasa como argumento a otra función y se ejecuta después de que la función principal ha terminado de ejecutarse.
 	/*
 	function primeraFuncion(callback){
 		callback("pedro");
@@ -18,6 +19,7 @@
 	*/
 	function primeraFuncion(callback){
 		callback();
+		document.write("Terminó la primera función<br>");
 	}
 	primeraFuncion(()=>{for(let i=0;i<=5;i++){document.write(i+`<br>`)}})
 
